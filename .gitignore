@@ -1,1 +1,6 @@
 node_modules
+*.log
+.env.local
+.next/
+apps/web/.env.local
+apps/web/.next/
