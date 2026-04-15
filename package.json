@@ -1,0 +1,32 @@
+{
+  "name": "parkids-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Par-Kids — Intelligent Family Growth Planner",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "pnpm --filter @parkids/web dev",
+    "dev:mobile": "pnpm --filter @parkids/mobile start",
+    "build:web": "pnpm --filter @parkids/web build",
+    "build:all": "turbo run build",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0",
+    "prettier": "^3.2.0",
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.0.0"
+}

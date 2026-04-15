@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #2D7D5A;
+    --color-accent: #3ABFBF;
+    --color-warm-bg: #FDF6EC;
+    --color-text: #1E2D2F;
+  }
+  body {
+    @apply text-[#1E2D2F];
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+  html.dark body {
+    @apply bg-charcoal-900 text-sand-100;
+  }
+  * { box-sizing: border-box; }
+}

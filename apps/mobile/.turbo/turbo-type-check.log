@@ -1,0 +1,4 @@
+
+> @parkids/mobile@1.0.0 type-check C:\Cdev\Parkids\parkids-starter-package\parkids\apps\mobile
+> tsc --noEmit
+

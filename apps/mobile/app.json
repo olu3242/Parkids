@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "Par-Kids",
+    "slug": "parkids",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FDF6EC"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.parkids.app",
+      "buildNumber": "1"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FDF6EC"
+      },
+      "package": "com.parkids.app",
+      "versionCode": 1
+    },
+    "plugins": [
+      "expo-router",
+      ["expo-notifications", {
+        "icon": "./assets/notification-icon.png",
+        "color": "#2D7D5A"
+      }],
+      "expo-secure-store"
+    ],
+    "scheme": "parkids",
+    "extra": {
+      "supabaseUrl": "your-supabase-url",
+      "supabaseAnonKey": "your-anon-key"
+    }
+  }
+}
