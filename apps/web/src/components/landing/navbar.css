@@ -1,0 +1,207 @@
+.pk-root {
+  --indigo: #2d1b69;
+  --violet: #5b21b6;
+  --purple: #7c3aed;
+  --lavender: #a78bfa;
+  --lilac: #ede9fe;
+  --peach: #fcd34d;
+  --coral: #fb923c;
+  --sky: #38bdf8;
+  --mint: #34d399;
+  --rose: #f472b6;
+  --cream: #fdfbff;
+  --white: #ffffff;
+  --text: #1a0f3a;
+  --text-mid: #4b3d6e;
+  --text-soft: #7c6fa0;
+  --cs: 0 16px 56px rgba(92, 33, 182, 0.1), 0 2px 8px rgba(92, 33, 182, 0.06);
+  --ch: 0 28px 72px rgba(92, 33, 182, 0.16), 0 4px 16px rgba(92, 33, 182, 0.1);
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  background: #fdfbff;
+  color: #1a0f3a;
+}
+:global(html) {
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 5%;
+  background: rgba(253, 251, 255, 0.78);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+  transition: box-shadow 0.3s;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nlm {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--purple), var(--coral));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+}
+.nlt {
+  font-family: var(--font-fraunces), serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--indigo), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.nav-links {
+  gap: 28px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--text-mid);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: var(--purple);
+}
+.ncta {
+  background: linear-gradient(135deg, var(--purple), var(--coral));
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 50px;
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.3);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s !important;
+}
+.ncta:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.4) !important;
+}
+.nctb {
+  border: var(--purple) 2px solid;
+  color: var(--purple) !important;
+  padding: 8px 22px;
+  border-radius: 50px;
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.3);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s !important;
+}
+.nctb:hover {
+  color: var(--coral);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.4) !important;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.burger {
+  display: none;
+}
+
+.pk-mobile {
+  position: fixed;
+  inset: 0;
+  z-index: 240;
+  pointer-events: none;
+}
+
+.pk-mobile-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  transition: all 0.35s ease;
+}
+
+.pk-mobile-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(84vw, 100%);
+  background: var(--lilac);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
+  padding: 80px 24px 30px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.pk-mobile.open {
+  pointer-events: auto;
+}
+
+.pk-mobile.open .pk-mobile-backdrop {
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(3px);
+}
+
+.pk-mobile.open .pk-mobile-panel {
+  transform: translateX(0);
+}
+
+.pk-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 999px;
+  color: #141210;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pk-close:hover {
+  background: var(--purple);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.pk-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pk-mobile-links a {
+  text-decoration: none;
+  color: var(--indigo);
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.22s ease;
+}
+
+.pk-mobile-links a:hover {
+  color: var(--purple);
+  transform: translateX(6px);
+}

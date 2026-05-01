@@ -1,30 +1,30 @@
-import type { Metadata } from 'next';
-import LandingPageClient from '@/components/landing/LandingPageClient';
-import { createServerSupabaseClient } from '@/lib/supabase/server';
-import { getLandingPageData } from '@/lib/landing';
+import type { Metadata } from "next";
+import LandingPageClient from "@/components/landing/LandingPageClientOld";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getLandingPageData } from "@/lib/landing";
 
-export const dynamic = 'force-dynamic';
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
+export const dynamic = "force-dynamic";
+const siteUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
 export async function generateMetadata(): Promise<Metadata> {
   const supabase = await createServerSupabaseClient();
   const data = await getLandingPageData(supabase);
-  const title = 'Par-Kids | Family Growth Platform';
+  const title = "Par-Kids | Family Growth Platform";
   const description = `Guided family check-ins, shared goals, and decisions with parent veto. ${data.faqs.length} FAQs and ${data.pricingPlans.length} plans available.`;
 
   return {
     title,
     description,
-    alternates: { canonical: '/' },
+    alternates: { canonical: "/" },
     openGraph: {
       title,
       description,
       url: siteUrl,
-      siteName: 'Par-Kids',
-      type: 'website',
+      siteName: "Par-Kids",
+      type: "website",
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
     },
@@ -37,31 +37,32 @@ export default async function HomePage() {
   const firstPlan = data.pricingPlans[0];
 
   const productJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: 'Par-Kids',
-    description: 'Family Growth Platform for check-ins, goal tracking, voting, and parent-guided decisions.',
-    brand: { '@type': 'Brand', name: 'Par-Kids' },
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Par-Kids",
+    description:
+      "Family Growth Platform for check-ins, goal tracking, voting, and parent-guided decisions.",
+    brand: { "@type": "Brand", name: "Par-Kids" },
     url: siteUrl,
     offers: firstPlan
       ? {
-          '@type': 'Offer',
-          priceCurrency: 'USD',
+          "@type": "Offer",
+          priceCurrency: "USD",
           price: (firstPlan.price_monthly_cents / 100).toFixed(2),
-          availability: 'https://schema.org/InStock',
+          availability: "https://schema.org/InStock",
           url: `${siteUrl}/pricing`,
         }
       : undefined,
   };
 
   const faqJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
     mainEntity: data.faqs.map((faq) => ({
-      '@type': 'Question',
+      "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
-        '@type': 'Answer',
+        "@type": "Answer",
         text: faq.answer,
       },
     })),
