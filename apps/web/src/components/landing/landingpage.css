@@ -1363,6 +1363,7 @@ footer {
   border-radius: 12px;
   display: flex;
   align-items: center;
+  gap: 12px;
   padding: 0 14px;
   transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   min-width: 60px;

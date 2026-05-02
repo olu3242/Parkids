@@ -41,10 +41,7 @@ export default function LandingPageClient({
   useCases,
   galleryItems,
 }: Props) {
-  // const [mobileOpen, setMobileOpen] = useState(false);
-  // const [selectedMood, setSelectedMood] = useState(1);
   const [openFaq, setOpenFaq] = useState<string | null>(faqs[0]?.id ?? null);
-  // const [role, setRole] = useState<"parent" | "child">("parent");
 
   useEffect(() => {
     if (!openFaq && faqs[0]?.id) {

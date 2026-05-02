@@ -216,17 +216,17 @@ interface InfoStat {
 const OPTIONS: VoteOption[] = [
   {
     label: "Bowling",
-    icon: <Disc3 size={22} strokeWidth={2} />,
+    icon: <Disc3 size={24} strokeWidth={2} />,
     gradient: "linear-gradient(135deg, #7c3aed, #a78bfa)",
   },
   {
     label: "Movies",
-    icon: <Clapperboard size={22} strokeWidth={2} />,
+    icon: <Clapperboard size={24} strokeWidth={2} />,
     gradient: "linear-gradient(135deg, #fb923c, #fcd34d)",
   },
   {
     label: "Pizza Night",
-    icon: <Pizza size={22} strokeWidth={2} />,
+    icon: <Pizza size={24} strokeWidth={2} />,
     gradient: "linear-gradient(135deg, #f472b6, #fb923c)",
   },
 ];

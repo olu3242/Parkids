@@ -291,7 +291,7 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
       />
@@ -300,7 +300,7 @@ export default async function HomePage() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
-      ) : null} */}
+      ) : null}
       <LandingPageClient
         metric={data.metric}
         pricingPlans={data.pricingPlans}
